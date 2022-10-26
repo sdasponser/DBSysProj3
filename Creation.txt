@@ -202,6 +202,8 @@ CREATE TABLE Stores(
     FOREIGN KEY(Isbn) REFERENCES Book(Isbn)
 );
 
+--Randomly generated values
+
 INSERT INTO Stores VALUES('782140661',1);
 INSERT INTO Stores VALUES('72227885',1);
 INSERT INTO Stores VALUES('471200247',2);
@@ -345,6 +347,8 @@ CREATE TABLE Book_Temp(
     FOREIGN KEY(Shelf_no) REFERENCES Shelf(Shelf_no),
     FOREIGN KEY(Transaction_id) REFERENCES Txn(Transaction_id)
 );
+
+--Randomly generated values
 
 INSERT INTO Book_Temp VALUES(1,2,3,null,'782140661');
 INSERT INTO Book_Temp VALUES(4,2,1,null,'72227885');
