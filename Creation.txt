@@ -186,26 +186,26 @@ CREATE TABLE Customer(
     Revenue_generated FLOAT
 );
 
-INSERT INTO Customer VALUES(1, 'Adam Smith', '111 Anteater St., Columbus, OH', 6145550101, null);
-INSERT INTO Customer VALUES(2, 'Beth Wooster', '222 Balloon St., Columbus, OH', 6145550202, null);
-INSERT INTO Customer VALUES(3, 'Carmen Langston', '333 Cartoon Rd., Columbus, OH', 6145550303, null);
-INSERT INTO Customer VALUES(4, 'Donald Duck', '444 Denial Ave., Columbus, OH', 6145550404, null);
-INSERT INTO Customer VALUES(5, 'Elton Joe', '555 Elegant Rd., Columbus, OH', 6145550505, null);
-INSERT INTO Customer VALUES(6, 'Frankie Antonio', '66 Frankfurter St., Springfield, IL', 2175550606, null);
-INSERT INTO Customer VALUES(7, 'Georgy Shukoff', '777 Gagarin Pkwy., Springfield, IL', 2175550707, null);
-INSERT INTO Customer VALUES(8, 'Henrietta Locks', '888 Immortal Hwy., Indianapolis, IN', 3175550808, null);
-INSERT INTO Customer VALUES(9, 'Ilena Tolstoya', '999 Management Blvd., Indianapolis, IN', 3175550909, null);
-INSERT INTO Customer VALUES(10, 'Julia Tulia', '101 Centennial St., Lansing, MI', 5175551010, null);
-INSERT INTO Customer VALUES(11,Karl Morks,"102 Komsomol Ave., Columbus, OH",6145551111,null);
-INSERT INTO Customer VALUES(12,Laura Hills,"103 Ice Mountain Tr., Columbus, OH",6145551212,null);
-INSERT INTO Customer VALUES(13,Maurice Vega,"1235 Baton St., Springfield, IL",2175551313,null);
-INSERT INTO Customer VALUES(14,Nikita Crushoff,"105 Komsomol Ave., Columbus, OH",6145551414,null);
-INSERT INTO Customer VALUES(15,Olivia Martini,"106 Wasted Rd., Columbus, OH",6145551515,null);
-INSERT INTO Customer VALUES(16,Paulie Antonio,"107 Deepdish Blvd., Springfield, IL",2175551616,null);
-INSERT INTO Customer VALUES(17,Quentin Tarantula,"108 Arachnophobe St., Springfield, IL",2175551717,null);
-INSERT INTO Customer VALUES(18,Rohit Naren,"109 Hiphop St., Indianapolis, IN",3175551818,null);
-INSERT INTO Customer VALUES(19,Sasha Heavies,"110 Destitution Way, Indianapolis, IN",3175551919,null);
-INSERT INTO Customer VALUES(20,Troy Borker,"159 Moth St., Lansing, MI",5175552020,null);
+INSERT INTO Customer VALUES(1, 'Adam Smith', '111 Anteater St., Columbus, OH', 6145550101, null, asmith@mail.web);
+INSERT INTO Customer VALUES(2, 'Beth Wooster', '222 Balloon St., Columbus, OH', 6145550202, null, b.w00st3r@mail.web);
+INSERT INTO Customer VALUES(3, 'Carmen Langston', '333 Cartoon Rd., Columbus, OH', 6145550303, null, langston001@mail.web);
+INSERT INTO Customer VALUES(4, 'Donald Duck', '444 Denial Ave., Columbus, OH', 6145550404, null, narcissistduck@mail.web);
+INSERT INTO Customer VALUES(5, 'Elton Joe', '555 Elegant Rd., Columbus, OH', 6145550505, null, joethesinger@mail.web);
+INSERT INTO Customer VALUES(6, 'Frankie Antonio', '66 Frankfurter St., Springfield, IL', 2175550606, null, frankiespaghetti@mail.web);
+INSERT INTO Customer VALUES(7, 'Georgy Shukoff', '777 Gagarin Pkwy., Springfield, IL', 2175550707, null, nishagunazad@mail.web);
+INSERT INTO Customer VALUES(8, 'Henrietta Locks', '888 Immortal Hwy., Indianapolis, IN', 3175550808, null, immortalme@mail.web);
+INSERT INTO Customer VALUES(9, 'Ilena Tolstoya', '999 Management Blvd., Indianapolis, IN', 3175550909, null, deathcomesforall@mail.web);
+INSERT INTO Customer VALUES(10, 'Julia Tulia', '101 Centennial St., Lansing, MI', 5175551010, null, iliketulips@mail.web);
+INSERT INTO Customer VALUES(11,Karl Morks,"102 Komsomol Ave., Columbus, OH",6145551111,null, seizethemeans@mail.web);
+INSERT INTO Customer VALUES(12,Laura Hills,"103 Ice Mountain Tr., Columbus, OH",6145551212,null, l.silent@mail.web);
+INSERT INTO Customer VALUES(13,Maurice Vega,"1235 Baton St., Springfield, IL",2175551313,null, mvega@fixer.net);
+INSERT INTO Customer VALUES(14,Nikita Crushoff,"105 Komsomol Ave., Columbus, OH",6145551414,null, balddummy@mail.web);
+INSERT INTO Customer VALUES(15,Olivia Martini,"106 Wasted Rd., Columbus, OH",6145551515,null, shakenandstirred@mail.web);
+INSERT INTO Customer VALUES(16,Paulie Antonio,"107 Deepdish Blvd., Springfield, IL",2175551616,null, brokenlegs@mail.web);
+INSERT INTO Customer VALUES(17,Quentin Tarantula,"108 Arachnophobe St., Springfield, IL",2175551717,null, spiderssuck@mail.web);
+INSERT INTO Customer VALUES(18,Rohit Naren,"109 Hiphop St., Indianapolis, IN",3175551818,null,oldfriend@mail.web);
+INSERT INTO Customer VALUES(19,Sasha Heavies,"110 Destitution Way, Indianapolis, IN",3175551919,null,ihavenomoney@mail.web);
+INSERT INTO Customer VALUES(20,Troy Borker,"159 Moth St., Lansing, MI",5175552020,null,loss@mail.web);
 
 CREATE TABLE Employee(
     Ssn INT PRIMARY KEY,
@@ -543,7 +543,7 @@ INSERT INTO Book_Temp VALUES(5,3,3,null,'385504470');
 INSERT INTO Book_Temp VALUES(2,2,4,null,'312276702');
 INSERT INTO Book_Temp VALUES(2,4,4,null,'743457358');
 INSERT INTO Book_Temp VALUES(1,3,4,null,'1880418568');
-INSERT INTO Book_Temp VALUES(4,1,2,743455967,'743455967');
+INSERT INTO Book_Temp VALUES(4,1,2,19,'743455967');
 INSERT INTO Book_Temp VALUES(3,4,4,null,'140077022');
 INSERT INTO Book_Temp VALUES(5,1,4,null,'679722955');
 INSERT INTO Book_Temp VALUES(1,3,1,null,'684848155');
@@ -572,7 +572,7 @@ INSERT INTO Book_Temp VALUES(4,2,4,null,'1558606432');
 INSERT INTO Book_Temp VALUES(3,3,2,4,'72222743');
 INSERT INTO Book_Temp VALUES(3,4,2,null,'345409469');
 INSERT INTO Book_Temp VALUES(5,3,3,null,'375508325');
-INSERT INTO Book_Temp VALUES(5,1,3,4,'345336895');
+INSERT INTO Book_Temp VALUES(5,1,3,21,'345336895');
 INSERT INTO Book_Temp VALUES(1,3,3,11,'671004107');
 INSERT INTO Book_Temp VALUES(2,3,2,null,'345376595');
 INSERT INTO Book_Temp VALUES(5,3,4,null,'316666343');
@@ -587,7 +587,7 @@ INSERT INTO Book_Temp VALUES(4,3,1,null,'373218257');
 INSERT INTO Book_Temp VALUES(4,4,1,null,'399149392');
 INSERT INTO Book_Temp VALUES(1,3,4,null,'1561584029');
 INSERT INTO Book_Temp VALUES(1,4,1,5,'1579902944');
-INSERT INTO Book_Temp VALUES(2,1,4,1,'1561586196');
+INSERT INTO Book_Temp VALUES(2,1,4,22,'1561586196');
 INSERT INTO Book_Temp VALUES(1,3,3,9,'61092177');
 INSERT INTO Book_Temp VALUES(1,4,3,20,'60502935');
 INSERT INTO Book_Temp VALUES(4,2,1,null,'61020656');
@@ -599,7 +599,7 @@ CREATE TABLE Book_Merge AS
 SELECT * FROM Proj_Data_CSV NATURAL JOIN Book_Temp;
 
 INSERT INTO Book
-SELECT * FROM Book_Temp;
+SELECT * FROM Book_Merge;
 
 DROP TABLE Book_Temp;
 DROP TABLE Book_Merge;

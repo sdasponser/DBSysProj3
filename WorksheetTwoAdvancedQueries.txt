@@ -1,0 +1,59 @@
+--5a)--
+SELECT Name, SUM(Price) FROM (Book JOIN Txn ON Txn.Transaction_id=Book.Transaction_id) NATURAL JOIN (Customer NATURAL JOIN Buys)
+GROUP BY Customer_id;
+
+--5b)--
+CREATE TABLE Purchase_Totality AS
+SELECT Customer_id, Name, Email, SUM(Price) AS Price_sum FROM (Book JOIN Txn ON Txn.Transaction_id=Book.Transaction_id) NATURAL JOIN (Customer NATURAL JOIN Buys)
+GROUP BY Customer_id;
+
+SELECT Name, Email FROM Purchase_Totality
+WHERE Price_sum > (SELECT AVG(Price_sum) FROM Purchase_Totality)
+GROUP BY Customer_id;
+
+--5c)--
+SELECT Title, COUNT(Isbn) FROM (Book JOIN Txn ON Txn.Transaction_id=Book.Transaction_id) NATURAL JOIN (Customer NATURAL JOIN Buys)
+GROUP BY Isbn
+ORDER BY COUNT(Isbn) DESC;
+
+--5d)--
+SELECT title, SUM(Price)*COUNT(Buys.Isbn) FROM Book NATURAL JOIN Buys
+GROUP BY Buys.Isbn;
+
+--5e)--
+CREATE TABLE Customer_Purchase AS
+SELECT Isbn, Title, Authors, COUNT(Buys.Isbn) as Book_count FROM (Book JOIN Txn ON Txn.Transaction_id=Book.Transaction_id) NATURAL JOIN (Customer NATURAL JOIN Buys)
+GROUP BY Isbn;
+
+SELECT Title, Authors FROM Customer_Purchase
+WHERE Book_count = (SELECT MAX(Book_count) FROM Customer_Purchase);
+
+--5f)--
+CREATE TABLE Book_By_Sales AS
+SELECT title, Authors, SUM(Price)*COUNT(Buys.Isbn) AS Total_sales FROM Book NATURAL JOIN Buys
+GROUP BY Authors;
+
+SELECT Authors FROM Book_By_Sales
+WHERE Total_sales = (SELECT MAX(Total_sales) FROM Book_By_Sales);
+
+--5g)--
+CREATE TABLE Book_By_Sales AS
+SELECT title, Authors, SUM(Price)*COUNT(Buys.Isbn) AS Total_sales FROM Book NATURAL JOIN Buys
+GROUP BY Buys.Isbn;
+
+CREATE TABLE Most_Profitable_Author AS
+SELECT Authors FROM Book_By_Sales
+WHERE Total_sales = (SELECT MAX(Total_sales) FROM Book_By_Sales);
+
+SELECT * FROM ((Book JOIN Txn ON Txn.Transaction_id=Book.Transaction_id) NATURAL JOIN (Customer NATURAL JOIN Buys)) NATURAL JOIN Most_Profitable_Author;
+
+--5h)--
+CREATE TABLE Purchase_Totality AS
+SELECT Customer_id, Name, Email, SUM(Price) AS Price_sum FROM (Book JOIN Txn ON Txn.Transaction_id=Book.Transaction_id) NATURAL JOIN (Customer NATURAL JOIN Buys)
+GROUP BY Customer_id;
+
+CREATE TABLE Big_Spenders AS
+SELECT Customer_id, Name FROM Purchase_Totality
+WHERE Price_sum > (SELECT AVG(Price_sum) FROM Purchase_Totality);
+
+SELECT Authors FROM (Customer JOIN Big_Spenders ON Customer.Customer_id=Big_Spenders.Customer_id) NATURAL JOIN (Buys NATURAL JOIN Book)

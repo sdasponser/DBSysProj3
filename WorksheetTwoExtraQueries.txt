@@ -1,0 +1,11 @@
+--4a)--
+SELECT COUNT(Transaction_id) FROM Txn NATURAL JOIN Customer
+WHERE Name = [QUERY];
+
+--4b)--
+SELECT Title, MAX(Initial_date) FROM (Book NATURAL JOIN Buys) NATURAL JOIN (Customer NATURAL JOIN Txn)
+WHERE Customer_id = [QUERY];
+
+--4c)--
+SELECT Shop_id, City, State FROM Employee NATURAL JOIN Shop
+WHERE Ssn = [QUERY];
