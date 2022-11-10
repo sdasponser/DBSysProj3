@@ -20,7 +20,7 @@ SELECT COUNT(ISBN) FROM (Book JOIN Txn ON Txn.Transaction_id=Book.Transaction_id
 WHERE Customer_id = [QUERY];
 
 --3f)--
-CREATE TABLE Customer_Purchase AS
+CREATE VIEW Customer_Purchase AS
 SELECT Name, Customer_id, COUNT(Buys.ISBN) as Book_count FROM (Book JOIN Txn ON Txn.Transaction_id=Book.Transaction_id) NATURAL JOIN (Customer NATURAL JOIN Buys)
 GROUP BY Customer_id;
 
